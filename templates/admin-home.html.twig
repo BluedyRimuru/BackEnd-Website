@@ -1,0 +1,96 @@
+{% include 'entete.html.twig' %}
+{% include 'navbar.html.twig' %}
+
+{% block content %}
+<section class="bannerAdminHome borderBAH" style="display: flex;  justify-content: center; align-items: center;">
+    <div class="contenuAdminHome">
+        <div class="imgResp">
+            <img class="imgResp" src="./images/milim.png" alt="Milim Demon Lord Dragonoid" width="800">
+        </div>
+        <div class="divAdminHome">
+            <div class="bulleInformative">
+                <h2> Bienvenue {{ nom }} {{ prenom }} dans la page de connexion d'Administrateur !</h2>
+            </div>
+            <div class="bulleInformativeImg">
+                <img class="mims" src="./images/BW_1.webp" alt="Milim Demon Lord Dragonoid" width="200">
+            </div>
+            <div class="bulleInformative">
+                <p> Cette partie du site est le panel Administrateur, c'est ici que sera géré l'ensemble du site web.
+                Il est donc important de ne jamais divulguer une quelconque information relative à ce site.</p>
+            </div>
+            <div class="bulleBouton">
+                <div class="form-group text-center">
+                    <a href="./gestion-questionnaire" class="btn btn-prim nones">Questionnaire</a>
+                </div>
+                <div class="form-group text-center">
+                    <a href="./gestion-administrateur" class="btn btn-prim nones">Créer Compte</a>
+                </div>
+                <div class="form-group text-center">
+                    <a href="./gestion-utilisateur" class="btn btn-prim nones">Utilisateurs</a>
+                </div>
+                <div class="form-group text-center">
+                    <a href="./espace-personnel" class="btn btn-prim nones">Espace Admin</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+        .borderBAH {
+            padding: 20px;
+        }
+        .contenuAdminHome {
+            display:flex;
+            position: relative;
+            justify-content: center;
+            align-content: center;
+        }
+        .divAdminHome {
+            display: flex;
+            justify-content: space-between;
+            align-content: center;
+            flex-direction: column;
+        }
+        .bulleInformative {
+            display: flex;
+            justify-content: center;
+            color: black;
+            background-color: #f5c6cb;
+            border-radius: 20px;
+            padding: 20px;
+        }
+        .bulleBouton {
+            display: flex;
+            justify-content: space-between;
+            border-radius: 20px;
+        }
+        .bulleInformative h2 {
+            font-size: 1.4em;
+        }
+        .bulleInformativeImg {
+            display: none;
+        }
+        @media screen and (max-width: 1100px) {
+
+            .divAdminHome {
+                padding: 30px;
+            }
+            .bulleInformativeImg {
+                display: flex;
+                justify-content: center;
+                border-radius: 20px;
+                padding: 20px;
+            }
+            .bulleInformativeImg img {
+                border-radius: 20px;
+            }
+            .bulleBouton {
+                display: none;
+            }
+            .contenuAdminHome .imgResp img {
+                display: none;
+            }
+        }
+    </style>
+</section>
+{% endblock %}
+{% include 'footer.html.twig' %}

@@ -1,0 +1,51 @@
+{% block entete %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700,900" rel="stylesheet">
+    <link href="./css/erreur.css" rel="stylesheet">
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <script src="./JavaScript/random.js"></script>
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/Plogo.png">
+    <title>QuizZz - Erreur 404</title>
+{% endblock %}
+{% block content %}
+<div id="notfound">
+{#    <div style="padding-left: 440px; padding-top: 170px">#}
+{#        <img src="./images/grancrest-grancrest-senki.gif" alt="Image-Erreur" width="1000">#}
+{#    </div>#}
+    <div class="NoNeed" style="display: flex; position: absolute; justify-content: center; right: 0; bottom: 35%">
+        <script>
+            getRandomImage(arrayImg, "");
+        </script>
+    </div>
+    <div class="Need" style="display: flex; position: absolute; justify-content: center;  left: 0; bottom: 35%">
+        <script>
+            getRandomImage(arrayImg, "");
+        </script>
+    </div>
+    <div class="notfound">
+        <div class="notfound-404">
+            <h1>404</h1>
+            <h2>Page non trouvée</h2>
+        </div>
+        <a href="/">Retour Page d'Accueil</a>
+    </div>
+    <style>
+        @media screen and (max-width: 1300px) {
+            .NoNeed img {
+                display: none;
+            }
+        }
+    </style>
+{#    <div>#}
+{#        <script>#}
+{#            // for (let i = 0; i < 10; i++)#}
+{#            // {#}
+{#                getRandomImage(arrayImg, "");#}
+{#            // }#}
+{#        </script>#}
+{#    </div>#}
+</div>
+{% endblock %}

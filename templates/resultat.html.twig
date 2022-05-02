@@ -1,0 +1,9 @@
+{% extends "base.html.twig" %}
+
+{% block titre %}Résultat{% endblock %}
+
+{% block content %}
+    -> Affichage de l'objet :<br>
+    Libelle du Questionnaire : {{ result.getLibelleQuestionnaire }}<br>
+    <a href="./essais.php">Retour</a>
+{% endblock %}

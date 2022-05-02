@@ -1,0 +1,14 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+    {% if visu == false %}
+        <span>-> Liste des questionnaires :</span><br>
+        {% for toto in result %}
+            <a href="?idQuestionnaire={{ toto.getIdQuestionnaire }}" >{{ toto.getIdQuestionnaire }} - {{ toto.getLibelleQuestionnaire }}</a></br>
+        {% endfor %}
+    {% else %}
+        Affichage de l'objet :<br>
+        {{ result.getLibelleQuestionnaire }}<br>
+        <a href="./essais.php">Retour</a>
+    {% endif %}
+{% endblock %}

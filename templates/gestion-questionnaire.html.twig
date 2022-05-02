@@ -1,0 +1,115 @@
+{% include 'entete.html.twig' %}
+{% include 'navbar.html.twig' %}
+{% block content %}
+    <section class="bannerAdminHome" style="background-attachment: fixed;">
+        <div class="dark:bg-gray-800 navVertical">
+            <span class="colorCircle"></span>
+            <span style="padding: 20px;"></span>
+            <img class="imgNavVertical" src="./images/JeanneAlter_Left.jpg" width="200px">
+        </div>
+        <div class="paddingLeft50" style="display: flex; align-items: center;">
+            <div class="contenuconnect">
+                <div class="login-form">
+                    <div class="login-form">
+                        {% if result != null %}
+                            <div class="alert {{ result.type == "success" ? "alert-success" : "alert-danger" }}">
+                                <strong>{{ result.type == "success" ? "Succès" : "Erreur" }}</strong> {{ result.message }}
+                            </div>
+                        {% endif %}
+                        <form action="./createquestionnairecontroller" method="post">
+                            <h2 class="text-center" style="font-size: 1em; font-weight: bold;">Création d'un Questionnaire :</h2>
+                            <div class="form-group">
+                                <label>
+                                    <br>
+                                    <p>-> -> ID du Questionnaire : </p>
+                                    <br>
+                                    <input type="text" name="idQuestionnaire" class="form-control" placeholder="" required="required" autocomplete="off">
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <br>
+                                    <p>-> -> Nom du Questionnaire : </p>
+                                    <br>
+                                    <input type="text" name="libelleQuestionnaire" class="form-control" placeholder="" required="required" autocomplete="off">
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <br>
+                                    <p>-> -> Nom des Questions : </p>
+                                    <br>
+                                    <p>-> Question n°1 :</p>
+                                    <input type="text" name="nomQuestion1" class="form-control" placeholder="" required="required" autocomplete="off">
+                                    <p>-> Question n°2 :</p>
+                                    <input type="text" name="nomQuestion2" class="form-control" placeholder="" required="required" autocomplete="off">
+                                    <p>-> Question n°3 :</p>
+                                    <input type="text" name="nomQuestion3" class="form-control" placeholder="" required="required" autocomplete="off">
+                                    <p>-> Question n°4 :</p>
+                                    <input type="text" name="nomQuestion4" class="form-control" placeholder="" required="required" autocomplete="off">
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <br>
+                                    <p>-> -> Réponses possibles : </p>
+                                    <br>
+                                    <p>-> Question n°1 :</p>
+                                    <br>
+                                    <p>Réponse n°1 :</p>
+                                    <input type="text" name="reponse1Question1" class="form-control" placeholder="" required="required" autocomplete="off">
+                                    <p>Réponse n°2 :</p>
+                                    <input type="text" name="reponse2Question1" class="form-control" placeholder="" required="required" autocomplete="off">
+                                    <p>Réponse n°3 :</p>
+                                    <input type="text" name="reponse3Question1" class="form-control" placeholder="" required="required" autocomplete="off">
+                                    <p>Réponse n°4 :</p>
+                                    <input type="text" name="reponse4Question1" class="form-control" placeholder="" required="required" autocomplete="off">
+                                    <br>
+                                    <p>-> Question n°2 :</p>
+                                    <br>
+                                    <p>Réponse n°1 :</p>
+                                    <input type="text" name="reponse1Question2" class="form-control" placeholder="" required="required" autocomplete="off">
+                                    <p>Réponse n°2 :</p>
+                                    <input type="text" name="reponse2Question2" class="form-control" placeholder="" required="required" autocomplete="off">
+                                    <p>Réponse n°3 :</p>
+                                    <input type="text" name="reponse3Question2" class="form-control" placeholder="" required="required" autocomplete="off">
+                                    <p>Réponse n°4 :</p>
+                                    <input type="text" name="reponse4Question2" class="form-control" placeholder="" required="required" autocomplete="off">
+                                    <br>
+                                    <p>-> Question n°3 :</p>
+                                    <br>
+                                    <p>Réponse n°1 :</p>
+                                    <input type="text" name="reponse1Question3" class="form-control" placeholder="" required="required" autocomplete="off">
+                                    <p>Réponse n°2 :</p>
+                                    <input type="text" name="reponse2Question3" class="form-control" placeholder="" required="required" autocomplete="off">
+                                    <p>Réponse n°3 :</p>
+                                    <input type="text" name="reponse3Question3" class="form-control" placeholder="" required="required" autocomplete="off">
+                                    <p>Réponse n°4 :</p>
+                                    <input type="text" name="reponse4Question3" class="form-control" placeholder="" required="required" autocomplete="off">
+                                    <br>
+                                    <p>-> Question n°4 :</p>
+                                    <br>
+                                    <p>Réponse n°1 :</p>
+                                    <input type="text" name="reponse1Question4" class="form-control" placeholder="" required="required" autocomplete="off">
+                                    <p>Réponse n°2 :</p>
+                                    <input type="text" name="reponse2Question4" class="form-control" placeholder="" required="required" autocomplete="off">
+                                    <p>Réponse n°3 :</p>
+                                    <input type="text" name="reponse3Question4" class="form-control" placeholder="" required="required" autocomplete="off">
+                                    <p>Réponse n°4 :</p>
+                                    <input type="text" name="reponse4Question4" class="form-control" placeholder="" required="required" autocomplete="off">
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="bg-blue-500 btn btn-primary btn-block">Créer</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="GUMaskedHero">
+            <img class="ImgMaskedHero" src="./images/milim.png" width="700" alt="MaskedHero">
+        </div>
+    </section>
+{% endblock %}
+{% include 'footer.html.twig' %}

@@ -1,0 +1,65 @@
+{% include 'entete.html.twig' %}
+{% include 'navbar.html.twig' %}
+{% block content %}
+    <section class="banneradmin">
+        <div class="contenulogin">
+            <h2>Espace Personnel</h2>
+            <p class="textprincipalaccount">
+                ✧ Pseudo : {{ login }}<br>
+                ✧ Email : {{ email }} <br>
+                ✧ Prénom : {{ prenom }} <br>
+                ✧ Nom : {{ nom }} <br>
+            </p>
+        </div>
+        <div class="login-form">
+            {% if result != null %}
+                <div class="alert {{ result.type == "success" ? "alert-success" : "alert-danger" }}">
+                    <strong>{{ result.type == "success" ? "Succès" : "Erreur" }}</strong> {{ result.message }}
+                </div>
+            {% endif %}
+            <form action="./modifadmincontroller" method="post">
+                <h2 class="text-center">Modification</h2>
+                <div class="form-group">
+                    <label>
+                        <input type="text" name="login" class="form-control" placeholder="Pseudo" required="required" autocomplete="off" value="{{ login }}">
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <input type="text" name="nom" class="form-control" placeholder="Nom" required="required" autocomplete="off" value="{{ nom }}">
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <input type="text" name="prenom" class="form-control" placeholder="Prenom" required="required" autocomplete="off" value="{{ prenom }}">
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <input type="email" name="email" class="form-control" placeholder="Email" required="required" autocomplete="off" value="{{ email }}">
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <input type="password" name="motDePasse" class="form-control" placeholder="Mot de passe" required="required" autocomplete="off">
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <input type="password" name="motDePasse_retype" class="form-control" placeholder="Re-tapez le mot de passe" required="required" autocomplete="off">
+                    </label>
+                </div>
+                <div>
+                    <a>❗ ATTENTION : Votre mot de passe sera lui aussi modifié</a>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="bg-blue-500 btn btn-prim btn-block">Éditer mes données</button>
+                </div>
+            </form>
+            <div class="form-group text-center">
+                <a href="./deconnexion" class="btn btn-danger nones">Déconnexion</a>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+{% include 'footer.html.twig' %}

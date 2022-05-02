@@ -1,0 +1,82 @@
+{% extends "base.html.twig" %}
+
+{% block entete %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/admin-page.css">
+    <link rel="stylesheet" href="./css/insco.css">
+    <link rel = "preconnect" href = "https://fonts.gstatic.com">
+    <script src="./JavaScript/navbar.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/Plogo.png">
+    <title>QuizZz</title>
+{% endblock %}
+{% block header %}
+    <header class="topnavIndex">
+        <marquee scrollamount="20">
+            <b>Connectez-vous ci-dessous</b>
+        </marquee>
+{#        <a>Connectez-vous</a>#}
+    </header>
+{% endblock %}
+{% block content %}
+    <section class="bannerconnect">
+        <div class="header-nav">
+            <div class="header-nav-bottom sub-navigation">
+                <div class="container-navbar">
+                    <div>
+                        <ul class="header-nav-bottom-left">
+                            <a href="https://discord.gg/RXr7ntpgFS" class="navbar-logo"><img src="./images/Discord-Logo-White.png" alt="Discord" width="40" height="45"></a>
+                            <p href="/" class="space-logo"></p>
+                        </ul>
+                    </div>
+                    <div class="header-nav-bottom-right">
+                        <ul>
+                            <a href="./ERREUR" class="active" style="color: white">➤ Erreur</a>
+{#                            <a href="./essais.php" class="active" style="color: white">➤ Essais</a>#}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contenuconnect" style="padding-top: 200px;">
+            <div class="imgIndex">
+                <img src="./images/slime_with_shizue_mask.png" alt="Discord" width="300" height="300">
+            </div>
+            <div class="login-form">
+                <div class="login-form">
+                    {% if result != null %}
+                        <div class="alert alert-danger">
+                            <strong>Erreur</strong> {{ result }}
+                        </div>
+                    {% endif %}
+                    <form action="./connexion" method="post">
+                        <h2 class="text-center">Connexion</h2>
+                        <div class="form-group">
+                            <label>
+                                <input type="email" name="email" class="form-control" placeholder="Email" required="required" autocomplete="off">
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                <input type="password" name="password" class="form-control" placeholder="Mot de passe" required="required" autocomplete="off">
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-block">Connexion</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="imgIndex" style="padding-right: 80px">
+                <img src="./images/shizue_mask.png" alt="Discord" width="300" height="300">
+            </div>
+        </div>
+    </section>
+{% endblock %}
+{% block footer %}
+<div class="copyright">
+    <p>© copyright 2022 <a href="">QuizZz</a>. Tous droits réservés</p>
+</div>
+{% endblock %}

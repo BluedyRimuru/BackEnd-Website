@@ -1,0 +1,51 @@
+{% include 'entete.html.twig' %}
+{% include 'navbar.html.twig' %}
+{% block content %}
+    <section class="bannerAdminHome" style="background-attachment: fixed;">
+        <div class="dark:bg-gray-800 navVertical">
+            <span class="colorCircle">
+                {% if result != null %}
+                    <div class="alert {{ result.type == "success" ? "alert-success" : "alert-danger" }}">
+                        <strong>{{ result.type == "success" ? "Succès" : "Erreur" }}</strong> {{ result.message }}
+                    </div>
+                    <p> {{ idDelete }} </p>
+                {% endif %}
+            </span>
+            <span style="padding: 20px;"></span>
+            <img class="imgNavVertical" src="./images/JeanneAlter_Left.jpg" width="200px">
+        </div>
+        <div style="display:flex; align-items: center; padding-left: 50px;">
+            <table class="table-auto border-collapse border border-slate-500 text-center" style="display: flex; justify-content: center; align-items: center; background-color: whitesmoke;">
+                <tr>
+                    <th colspan="6"> Gestion des Utilisateurs </th>
+                </tr>
+                <tr>
+                    <th class="border border-slate-600 p-2">ID</th>
+                    <th class="border border-slate-600 p-2">Pseudo</th>
+                    <th class="tabResponsiveNone border border-slate-600 p-2">Email</th>
+                    <th class="tabResponsiveNone border border-slate-600 p-2">Prenom</th>
+                    <th class="tabResponsiveNone border border-slate-600 p-2">Nom</th>
+                    <th class="border border-slate-600 p-2">Suppression</th>
+                </tr>
+                {% for etudiant in resultEtudiants %}
+                <tr>
+{#                    <th class="border border-slate-700 p-2"><input type="checkbox" id="case" name="select" value="{{ etudiant.getIdEtudiant }}"></th>#}
+                    <th class="border border-slate-700 p-2">{{ etudiant.getIdEtudiant }} </th>
+                    <th class="border border-slate-700 p-2">{{ etudiant.getLogin }}</a></th>
+                    <th class="tabResponsiveNone border border-slate-700 p-2">{{ etudiant.getEmail }}</a></th>
+                    <th class="tabResponsiveNone border border-slate-700 p-2">{{ etudiant.getPrenom }}</a></th>
+                    <th class="tabResponsiveNone border border-slate-700 p-2">{{ etudiant.getNom }}</a></th>
+                    <th class="border border-slate-700 p-2"><a href="/gestion-utilisateur/{{ etudiant.getIdEtudiant }}?deleteuser={{ etudiant.getIdEtudiant }}" class="text-red-500"> Supprimer </a></th>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div class="GUMaskedHero">
+            <img class="ImgMaskedHero" src="./images/33ccaadb5791c5f100dcbdc3e9d657a7.png" width="700" alt="MaskedHero">
+        </div>
+    </section>
+{% endblock %}
+{% include 'footer.html.twig' %}
+<style>
+
+</style>
