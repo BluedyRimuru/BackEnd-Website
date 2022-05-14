@@ -72,7 +72,7 @@ Admin - Password : ``` 123% ```
 ## 🍏 • Repository, Project ?
 
 What will you find in this directory ? That is the question.
-Actually not that much since if you clicked here it's to see my "Quizz" website.
+Actually not that much since if you clicked here it's to see my "Back-End Quizz" website.
 
 ## 🐍 • If u want Contact me :
 
